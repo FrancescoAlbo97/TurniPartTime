@@ -1,3 +1,4 @@
+from random import randint
 
 A= [[1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1],
     [1, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 0],
@@ -20,17 +21,24 @@ persone = ['x', 'bi', 'ugo', 'albo', 'lollo', 'chiara', 'selenia', 'pancotto', '
 
 a = ''
 for i in range(0,16):
-    print(('\''+'%s'+'\' : {') % (persone[i]))
-    for j in range(0,25):
+    #print(('\''+'%s'+'\' : {') % (persone[i]))
+    for j in range(0,74):
         d = j+1
-        if d < 25:
-            b =(("\'" + '%s'+'h' + '\': '+ '%s, ') % (d,A[i][j]))
+        if d < 74:
+            b =(("\'" + '%s'+'h' + '\': '+ '%s, ') % (d,randint(0,3)))
         else:
-            b = (("\'" + '%s' + 'h' + '\': ' + '%s ') % (d, A[i][j]))
+            b = (("\'" + '%s' + 'h' + '\': ' + '%s ') % (d, randint(0,3)))
         a = a + b
     if i < 15:
         a = a + '},'
     else:
         a = a + '}}'
-    print(a)
+    c = ('\''+'%s'+'\' : {') % (persone[i]) + a
+    print(c)
     a = ''
+
+for j in range(0,74):
+    d = j+1
+    b = ((", \'" + '%s' + 'h' + '\'' ) % (d))
+    a = a + b
+print(a)
