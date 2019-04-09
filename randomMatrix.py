@@ -19,15 +19,23 @@ A= [[1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 1],
 
 persone = ['x', 'bi', 'ugo', 'albo', 'lollo', 'chiara', 'selenia', 'pancotto', 'giacomino', 'eugenietto', 'ermenegildo', 'francescopio', 'gianmichelino', 'francescomario', 'annamariateresa', 'elkammmmmmmmoide']
 
+def Random():
+    r = randint(1,7)
+    if r > 3:
+        return 0
+    else:
+        return r;
+
+
 a = ''
 for i in range(0,16):
     #print(('\''+'%s'+'\' : {') % (persone[i]))
-    for j in range(0,74):
+    for j in range(0,70):
         d = j+1
-        if d < 74:
-            b =(("\'" + '%s'+'h' + '\': '+ '%s, ') % (d,randint(0,3)))
+        if d < 70:
+            b =(("\'" + '%s'+'h' + '\': '+ '%s, ') % (d,Random()))
         else:
-            b = (("\'" + '%s' + 'h' + '\': ' + '%s ') % (d, randint(0,3)))
+            b = (("\'" + '%s' + 'h' + '\': ' + '%s ') % (d, Random()))
         a = a + b
     if i < 15:
         a = a + '},'
@@ -37,7 +45,7 @@ for i in range(0,16):
     print(c)
     a = ''
 
-for j in range(0,74):
+for j in range(0,70):
     d = j+1
     b = ((", \'" + '%s' + 'h' + '\'' ) % (d))
     a = a + b
